@@ -200,6 +200,8 @@ body {
 .total-price {
     font-size: 1.25rem;
     color: var(--blue-100);
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .clear-cart-btn {

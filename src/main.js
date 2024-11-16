@@ -213,7 +213,11 @@ function validateInputs() {
 }
 
 function shareToWhatsApp(name, location) {
-  const listItems = cart.map((item) => item.name).join("\n");
+  const listItems = cart
+    .map((item) => {
+      return `${item.numberOfUnits} ${item.name}`;
+    })
+    .join("\n");
   const price = totalPriceSpan.textContent;
 
   const phoneNumber = "254718471224";

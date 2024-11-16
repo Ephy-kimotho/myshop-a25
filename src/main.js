@@ -215,14 +215,14 @@ function validateInputs() {
 function shareToWhatsApp(name, location) {
   const listItems = cart
     .map((item) => {
-      return `${item.numberOfUnits} ${item.name}`;
+      return `${item.numberOfUnits} - ${item.name}`;
     })
     .join("\n");
   const price = totalPriceSpan.textContent;
 
-  const phoneNumber = "254718471224";
+  const phoneNumber = "254715240982";
   const message = encodeURIComponent(
-    `Shopping List for ${name} to be delivered at ${location}:\n${listItems}\nTotal price: ${price}.
+    `Shopping List for ${name}, to be delivered at ${location}:\n${listItems}\nTotal price: ${price}.
     `
   );
 

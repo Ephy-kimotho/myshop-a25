@@ -203,6 +203,29 @@ body {
     color: var(--blue-100);
 }
 
+.clear-cart-btn-div {
+    text-align: center;
+}
+
+.clear-cart-btn {
+    border: none;
+    border-radius: 5px;
+    padding: 0.4rem 0.8rem;
+    background-color: var(--red-200);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.clear-cart-btn:active {
+    transform: scale(0.95);
+}
+
+.clear-cart-btn:hover {
+    background-color: var(--red-300);
+}
+
 .share-cart-btn {
     padding: 0.5rem 1.6rem;
     background-color: var(--green-200);

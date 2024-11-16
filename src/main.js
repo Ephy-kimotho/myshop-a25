@@ -20,6 +20,7 @@ const totalPriceSpan = document.querySelector(".total-price");
 const shareBtn = document.querySelector(".share-cart-btn");
 const cancelBtn = document.querySelector(".cancel-btn");
 const loader = document.querySelector(".loader");
+const clearCartBtn = document.querySelector(".clear-cart-btn");
 
 /* ------------------- GLOBALS ------------------- */
 let fetchedItems = [];
@@ -62,6 +63,7 @@ infoForm.addEventListener("submit", handleSubmit);
 cartIconContainer.addEventListener("click", showCart);
 shareBtn.addEventListener("click", verifyShare);
 cancelBtn.addEventListener("click", hideModal);
+clearCartBtn.addEventListener("click", removeCartFromLocalStorage);
 
 /* ------------------- UTILITY FUNCTIONS ------------------- */
 function clearInput(element) {
@@ -319,4 +321,10 @@ function loadCartItemsFromLocalStorage() {
     cart = savedCart;
     updateCart();
   }
+}
+
+function removeCartFromLocalStorage(e) {
+  localStorage.removeItem("shoppingCart");
+  cart = [];
+  updateCart();
 }

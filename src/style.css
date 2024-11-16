@@ -192,7 +192,6 @@ body {
 
 .cart-total {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding-block: 0.5rem;
     font-weight: bold;
@@ -201,10 +200,6 @@ body {
 .total-price {
     font-size: 1.25rem;
     color: var(--blue-100);
-}
-
-.clear-cart-btn-div {
-    text-align: center;
 }
 
 .clear-cart-btn {
@@ -216,6 +211,8 @@ body {
     cursor: pointer;
     font-weight: bold;
     font-size: 1rem;
+    margin-left: auto;
+    margin-right: 0.6rem;
 }
 
 .clear-cart-btn:active {

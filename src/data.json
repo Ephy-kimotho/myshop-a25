@@ -1,0 +1,30 @@
+[
+    {
+        "id": "1",
+        "name": "Flour",
+        "price": "115",
+        "category": "flour",
+        "imageSrc": "./assets/1kg flour.jpg"
+    },
+    {
+        "id": "2",
+        "name": "Camil beans",
+        "price": "110",
+        "category": "beans",
+        "imageSrc": "./assets/camil beans.jpg"
+    },
+    {
+        "id": "3",
+        "name": "Sugar",
+        "price": "90",
+        "category": "sugar",
+        "imageSrc": "./assets/sugar.webp"
+    },
+    {
+        "id": "4",
+        "name": "Basmati rice",
+        "price": "230",
+        "category": "",
+        "imageSrc": "./assets/1kg basmati rice.jpg"
+    }
+]

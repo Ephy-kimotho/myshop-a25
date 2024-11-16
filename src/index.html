@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choices</title>
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="/main.js" defer></script>
+    <script src="https://kit.fontawesome.com/c3dd8d1c05.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header">
+        <img class="img img-1" src="./assets/img1.png" alt="stock your home" />
+
+        <div class="cart-icon-container">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <p class="items-count">0</p>
+        </div>
+        <img class="img img-2" src="./assets/logo.png" alt="stock your home logo" />
+    </header>
+
+    <main class="main">
+        <section class="section">
+            <h1 class="section__title">
+                Have your recurrent shopping
+                delivered to you.
+            </h1>
+            <p class="section__text">Find and shop for what you need effortlessly.</p>
+
+            <form class="section__form">
+                <input id="shopping-input" placeholder="Search item by name..." />
+                <button type="submit" class="submit-btn bold">Search</button>
+            </form>
+
+            <img class="loader" src="./assets/loader.gif" alt="loader">
+            <div class="items-container">
+            </div>
+        </section>
+
+        <div class="error-message">
+            <i class="fa-solid fa-exclamation"></i>
+            <p></p>
+        </div>
+
+
+        <div class="shopping-cart">
+            <div class="cart-items-container">
+            </div>
+
+
+            <div class="cart-total">
+                <p>Total: <span class="total-price">Ksh. 0.00</span></p>
+                <button class="share-cart-btn">Share</button>
+            </div>
+        </div>
+
+    </main>
+
+    <div class="modal">
+        <form class="infoForm">
+            <div class="form-group">
+                <label for="nameInput">Name: </label>
+                <input type="text" name="name" id="nameInput" placeholder="Enter your name.">
+                <p class="errorBox" id="errorBoxName"></p>
+            </div>
+
+            <div class="form-group">
+                <label for="locationInput">Location: </label>
+                <input type="text" name="location" id="locationInput" placeholder="Enter your location.">
+                <p class="errorBox" id="errorBoxLocation"></p>
+            </div>
+
+            <div class="ok-btn-container">
+                <button type="button" class="info-form-btn cancel-btn">
+                    Cancel
+                </button>
+                <button type="submit" class="info-form-btn ok-btn">
+                    Okay
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <p class="footer__title">Automate your shopping with &commat;Choices. </p>
+        <div class="footer__contact__info">
+            <p><span class="bold">Phone: </span>0715240982</p>
+            <p><span class="bold">Mail: </span>info@choices.com</p>
+        </div>
+        <p><span class="bold">Address: </span>Tudor, Mombasa</p>
+    </footer>
+</body>
+
+</html>

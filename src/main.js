@@ -223,7 +223,7 @@ function validateInputs() {
 function shareToWhatsApp(name, location) {
   const listItems = cart
     .map((item) => {
-      return `${item.numberOfUnits} - ${item.category} ${item.name}`;
+      return `${item.numberOfUnits} - ${item.description} ${item.category} ${item.name}`;
     })
     .join("\n");
   const price = totalPriceSpan.textContent;

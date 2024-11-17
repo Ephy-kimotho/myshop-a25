@@ -70,6 +70,10 @@ function clearInput(element) {
   element.value = "";
 }
 
+function clearItemsContainer() {
+  itemsContainer.innerHTML = "";
+}
+
 function cartItemsExist() {
   return cart.length > 0;
 }
@@ -118,6 +122,7 @@ function getItem(e) {
   } else {
     const url = `https://shop-heii.onrender.com/api/v1/products?name=${searchTerm}`;
 
+    clearItemsContainer()
     loader.classList.add("show-loader");
     fetch(url)
       .then((res) => res.json())
@@ -291,7 +296,7 @@ function renderTotalPrice() {
     totalItems += item.numberOfUnits;
   });
 
-  itemsCount.textContent = totalItems;
+  itemsCount.textContent = totalItems.toString();
   totalPriceSpan.textContent = `Ksh. ${totalPrice}`;
 }
 

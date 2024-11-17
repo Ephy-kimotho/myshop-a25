@@ -1,3 +1,4 @@
+/* ------------------- IMPORTS ------------------- */
 import { nanoid } from "nanoid";
 
 /* ------------------- SELECTING DOM ELEMENTS ------------------- */
@@ -122,7 +123,7 @@ function getItem(e) {
   } else {
     const url = `https://shop-heii.onrender.com/api/v1/products?name=${searchTerm}`;
 
-    clearItemsContainer()
+    clearItemsContainer();
     loader.classList.add("show-loader");
     fetch(url)
       .then((res) => res.json())
@@ -222,7 +223,7 @@ function validateInputs() {
 function shareToWhatsApp(name, location) {
   const listItems = cart
     .map((item) => {
-      return `${item.numberOfUnits} - ${item.name}`;
+      return `${item.numberOfUnits} - ${item.category} ${item.name}`;
     })
     .join("\n");
   const price = totalPriceSpan.textContent;
@@ -236,6 +237,7 @@ function shareToWhatsApp(name, location) {
   const whatsAppLink = `https://wa.me/${phoneNumber}?text=${message}`;
 
   window.open(whatsAppLink, "_blank");
+  removeCartFromLocalStorage();
 }
 
 /* ------------------- CART FUNCTIONS ------------------- */
@@ -267,6 +269,7 @@ function renderCartItems() {
                     <img class="cart-item-image" src="${item.image}" alt="${item.name}" />
                     <div>
                         <h4 class="cart-item-name">${item.name}</h4>
+                        <p class="item-category">${item.description} ${item.category}</p>
                         <p class="cart-item-price">Ksh. ${item.price}</p>
                     </div>
                 </div>

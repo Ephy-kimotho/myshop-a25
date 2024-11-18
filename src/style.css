@@ -138,7 +138,7 @@ body {
     flex-direction: row;
     align-items: center;
     gap: 0.6rem;
-    flex-grow: 1;
+    width:70%;
     font-weight: bold;
 }
 
@@ -197,11 +197,11 @@ body {
     font-weight: bold;
 }
 
-.total-price {
-    font-size: 1.25rem;
+.total-price,
+.total-price-with-com {
+    font-size: 0.95rem;
     color: var(--blue-100);
     font-weight: bold;
-    letter-spacing: 1px;
 }
 
 .clear-cart-btn {
@@ -633,6 +633,11 @@ body {
 
     .item-count {
         margin-inline: 0.8rem;
+    }
+
+    .total-price,
+    .total-price-with-com {
+        font-size: 1.12rem;
     }
 
     .submit-btn {

@@ -22,10 +22,12 @@ const shareBtn = document.querySelector(".share-cart-btn");
 const cancelBtn = document.querySelector(".cancel-btn");
 const loader = document.querySelector(".loader");
 const clearCartBtn = document.querySelector(".clear-cart-btn");
+const totalPriceWithComSpan = document.querySelector(".total-price-with-com");
 
 /* ------------------- GLOBALS ------------------- */
 let fetchedItems = [];
 let cart = [];
+let totalPriceWithComission = 0;
 
 /* ------------------- EVENT LISTENERS ------------------- */
 window.addEventListener("click", () =>
@@ -109,6 +111,16 @@ function hideModal() {
   clearInput(nameInput);
   clearInput(locationInput);
   modal.style.display = "none";
+}
+
+function getCommission(price) {
+  if (price > 0 && price <= 1000) {
+    totalPriceWithComission = price + 100;
+  } else if (price > 1000) {
+    totalPriceWithComission = Math.round(0.1 * price + price);
+  }
+
+  totalPriceWithComSpan.textContent = `Ksh. ${totalPriceWithComission.toString()}`;
 }
 
 /* ------------------- UI FUNCTIONS ------------------- */
@@ -229,15 +241,6 @@ function shareToWhatsApp(name, location) {
     })
     .join("\n");
   const price = totalPriceSpan.textContent;
-  const oldPrice = parseInt(price.slice(5));
-
-  let totalPriceWithComission = 0;
-
-  if (oldPrice <= 1000) {
-    totalPriceWithComission = oldPrice + 100;
-  } else if (oldPrice > 1000) {
-    totalPriceWithComission = Math.round(0.1 * oldPrice + oldPrice);
-  }
 
   const phoneNumber = "254715240982";
   const message = encodeURIComponent(
@@ -312,6 +315,8 @@ function renderTotalPrice() {
 
   itemsCount.textContent = totalItems.toString();
   totalPriceSpan.textContent = `Ksh. ${totalPrice}`;
+
+  getCommission(totalPrice);
 }
 
 function updateNumberOfUnits(action, itemId) {

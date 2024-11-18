@@ -223,14 +223,25 @@ function validateInputs() {
 function shareToWhatsApp(name, location) {
   const listItems = cart
     .map((item) => {
-      return `${item.numberOfUnits} - ${item.description} ${item.category} ${item.name}`;
+      return `${item.numberOfUnits} - ${item.description} ${item.category} ${
+        item.name
+      } Ksh. ${item.price * item.numberOfUnits},`;
     })
     .join("\n");
   const price = totalPriceSpan.textContent;
+  const oldPrice = parseInt(price.slice(5));
+
+  let totalPriceWithComission = 0;
+
+  if (oldPrice <= 1000) {
+    totalPriceWithComission = oldPrice + 100;
+  } else if (oldPrice > 1000) {
+    totalPriceWithComission = Math.round(0.1 * oldPrice + oldPrice);
+  }
 
   const phoneNumber = "254715240982";
   const message = encodeURIComponent(
-    `Shopping List for ${name}, to be delivered at ${location}:\n${listItems}\nTotal price: ${price}.
+    `Shopping List for ${name}, to be delivered at ${location}:\n${listItems}\nTotal price without commission: ${price}\nTotal price with commission: Ksh. ${totalPriceWithComission}.
     `
   );
 

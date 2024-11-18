@@ -118,6 +118,8 @@ function getCommission(price) {
     totalPriceWithComission = price + 100;
   } else if (price > 1000) {
     totalPriceWithComission = Math.round(0.1 * price + price);
+  } else {
+    totalPriceWithComission = 0;
   }
 
   totalPriceWithComSpan.textContent = `Ksh. ${totalPriceWithComission.toString()}`;
